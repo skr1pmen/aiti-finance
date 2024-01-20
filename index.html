@@ -12,6 +12,7 @@
 <body>
 <div class="content">
     <div class="container">
+        <img class="background" style="margin-top: -25px" src="./assets/images/bg1.svg" alt="">
         <header>
             <nav>
                 <a href="./" class="logo">
@@ -205,6 +206,7 @@
                 завершающий этап, на котором вы уже реализуете свой проект, а мы осуществляем его тех. поддержку
             </div>
         </div>
+        <img class="background" src="./assets/images/bg2.svg" alt="">
         <div class="technology_block">
             <h3 class="title" id="technology">технологии</h3>
             <span class="main_description">чтобы реализовать ваш проект мы можем вести разработку в следующих направлениях</span>
@@ -223,6 +225,7 @@
             <h3 class="title">на какой платформе<br>нужен проект?</h3>
             <h3 class="title">на каком этапе<br>ваш проект сейчас?</h3>
             <h3 class="title">как быстро вы хотите<br>начать работу?</h3>
+            <h3 class="title title_final"></h3>
             <div class="progress_bar">
                 <span class="hint">
                     шаг <span>1</span> из 5
@@ -323,6 +326,33 @@
                     </svg>
                     <span class="building_name">в течение месяца</span>
                 </div>
+            </div>
+            <div class="building_items final">
+                <form enctype="multipart/form-data">
+                    <label class="name">
+                        имя
+                        <input class="input" type="text" name="user_name" placeholder="имя фамилия">
+                    </label>
+                    <label class="phone">
+                        Номер телефона
+                        <input class="input" type="text" name="user_phone" maxlength="10" placeholder="(987) 654 32-10">
+                    </label>
+                    <label class="email">
+                        Электронная почта
+                        <input class="input" type="text" name="user_email" placeholder="рабочий email">
+                    </label>
+                    <label class="text">
+                        комментарий
+                        <textarea class="input" name="user_text" cols="30" rows="1" placeholder="сроки запуска, бюджет, требования, ваши пожелания"></textarea>
+                    </label>
+                    <label class="file">
+                        <span class="file_title">прикрепить файл</span>
+                        <span class="file_desc">до 5 мб</span>
+                        <img src="./assets/images/DownloadSimple-r.svg" alt="downloadFile">
+                        <input type="file" style="display: none" id="user_file">
+                    </label>
+                    <button>начать проект</button>
+                </form>
             </div>
         </div>
     </div>
