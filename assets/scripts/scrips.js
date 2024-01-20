@@ -1,3 +1,10 @@
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        document.querySelector(".preloader").remove();
+        document.body.style.overflow = 'visible';
+    }, 1000);
+});
+
 const industryCard = document.querySelectorAll(".industry_card");
 industryCard.forEach((item) => {
     item.addEventListener("click", () => {

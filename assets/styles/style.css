@@ -4,6 +4,7 @@
 @import "./@media-320.css";
 @import "./fonts.css";
 @import "./vars.css";
+@import "./preloader.css";
 
 *{
     padding: 0;
@@ -13,6 +14,9 @@
     scroll-behavior: smooth;
     list-style: none;
     text-decoration: none;
+}
+body{
+    overflow: hidden;
 }
 .container{
     width: 1200px;
