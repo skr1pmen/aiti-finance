@@ -1,6 +1,85 @@
 @media screen and (max-width: 1000px) {
     .container{
         max-width: 960px;
-        background: red;
+    }
+    .logo svg{
+        width: 98px;
+        height: 54px;
+    }
+    .link a{
+        font-size: 15px;
+    }
+    .main_title{
+        font-size: 60px;
+    }
+    .main_title:after{
+        width: 112px;
+        height: 10px;
+        top: 50px;
+    }
+    .main_description{
+        font-size: 25px;
+    }
+    .title{
+        font-size: 46px;
+    }
+    .service_item{
+        width: 207px;
+        height: 209px;
+    }
+
+    .service_icon{
+        width: 70px;
+        height: 70px;
+    }
+    .service_name{
+        font-size: 20px;
+    }
+    .service_block .btn{
+        font-size: 22px;
+    }
+    .industry_cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .industry_info_title{
+        font-size: 36px;
+    }
+    .industry_info_list li{
+        font-size: 20px;
+    }
+    .stage_btn div{
+        font-size: 50px;
+    }
+    .stage_btn{
+        font-size: 40px;
+    }
+    .building_items{
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+    .building_item{
+        width: 201px;
+        height: 203px;
+    }
+    .preloader svg{
+        width: 300px;
+        height: 300px;
+    }
+    .title_final:before{
+        width: 909px;
+    }
+    .title_final span{
+        font-size: 24px;
+    }
+    .building_items.final form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .name,.phone{
+        grid-area: auto;
+    }
+    .building_items form button{
+        font-size: 19px;
     }
 }

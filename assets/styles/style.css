@@ -1,11 +1,6 @@
-@import "./@media-1000.css";
-@import "./@media-768.css";
-@import "./@media-480.css";
-@import "./@media-320.css";
 @import "./fonts.css";
 @import "./vars.css";
 @import "./preloader.css";
-
 *{
     padding: 0;
     margin: 0;
@@ -94,7 +89,7 @@ nav{
 /*Service Block*/
 .service_block{
     width: 100%;
-    height: calc(100dvh - 63px);
+    height: max(calc(100dvh - 63px), max-content);
     display: block;
 }
 .title{
@@ -150,6 +145,7 @@ nav{
 .industry_block{
     width: 100%;
     margin-top: 90px;
+    display: block;
 }
 .industry_items{
     margin-top: 52px;
@@ -275,7 +271,7 @@ nav{
 }
 .stage_info.visible{
     padding: 21px 15px 10px;
-    margin: 53px 0 60px 100px;
+    margin: 53px 0 60px 109px;
     max-height: max-content;
     overflow: visible;
 }
