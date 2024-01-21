@@ -144,6 +144,7 @@ nav{
 /*Industry Block*/
 .industry_block{
     width: 100%;
+    height: max(100dvh, max-content);
     margin-top: 90px;
     display: block;
 }
@@ -204,6 +205,43 @@ nav{
     text-transform: uppercase;
     margin-bottom: 21px;
 }
+.industry_info_list{
+    display: none;
+}
+#ind_1:checked ~ .industry_card_info,
+#ind_2:checked ~ .industry_card_info,
+#ind_3:checked ~ .industry_card_info,
+#ind_4:checked ~ .industry_card_info,
+#ind_5:checked ~ .industry_card_info,
+#ind_6:checked ~ .industry_card_info,
+#ind_7:checked ~ .industry_card_info,
+#ind_8:checked ~ .industry_card_info{
+ display: block;
+}
+#ind_1:checked ~ .industry_card_info > .industry_info_list_0{
+    display: block;
+}
+#ind_2:checked ~ .industry_card_info > .industry_info_list_1{
+    display: block;
+}
+#ind_3:checked ~ .industry_card_info > .industry_info_list_2{
+    display: block;
+}
+#ind_4:checked ~ .industry_card_info > .industry_info_list_3{
+    display: block;
+}
+#ind_5:checked ~ .industry_card_info > .industry_info_list_4{
+    display: block;
+}
+#ind_6:checked ~ .industry_card_info > .industry_info_list_5{
+    display: block;
+}
+#ind_7:checked ~ .industry_card_info > .industry_info_list_6{
+    display: block;
+}
+#ind_8:checked ~ .industry_card_info > .industry_info_list_7{
+    display: block;
+}
 .industry_info_list li{
     font-family: Circe, sans-serif;
     font-size: 25px;
@@ -230,6 +268,7 @@ nav{
 /*Stage Block*/
 .stage_block{
     width: 100%;
+    height: max(100vh, max-content);
 }
 .stage_btn{
     display: flex;

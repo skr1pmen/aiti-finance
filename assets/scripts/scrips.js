@@ -6,13 +6,28 @@ window.addEventListener("load", () => {
 });
 
 const industryCard = document.querySelectorAll(".industry_card");
+const title = document.querySelector(".industry_info_title")
+let isIcon = false;
 industryCard.forEach((item) => {
     item.addEventListener("click", () => {
         let activeCard = document.querySelector(".active");
         if (activeCard !== item) {
             item.classList.add("active");
-            document.querySelector(".industry_info_title").innerText = item.querySelector(".industry_card_name").innerText;
-            activeCard.classList.remove("active");
+            title.innerText = item.querySelector(".industry_card_name").innerText;
+            if (window.innerWidth > 480) {
+                activeCard.classList.remove("active");
+            }
+        }
+        if (window.innerWidth <= 480) {
+            let svg = item.querySelector(".industry_card_name").previousElementSibling;
+            let cloveSvg = svg.cloneNode(true);
+            if (!isIcon) {
+                isIcon = true;
+                document.querySelector(".industry_title").insertBefore(cloveSvg,title);
+            }
+            if (item.classList.contains("active")) {
+                item.classList.remove("active");
+            }
         }
     });
 });
@@ -75,3 +90,25 @@ const userPhone = document.querySelector(".input[name='user_phone']");
 userPhone.addEventListener("input", () => {
    userPhone.value = userPhone.value.replace(/\D/, '');
 });
+
+const links = document.querySelectorAll(".link");
+links.forEach((link) => {
+    if (window.innerWidth <= 480) {
+        if (!link.classList.contains("btn")) {
+            link.classList.add('deactivate');
+        }
+    }
+});
+if (window.innerWidth <= 480) {
+    document.querySelector(".industry_card").classList.remove("active");
+    const checkboxs = document.querySelectorAll(".checkbox");
+    checkboxs[0].checked = false;
+    checkboxs.forEach(item => {
+        item.setAttribute("type", "checkbox");
+    });
+    document.querySelector(".industry_card_info").addEventListener("click", () =>{
+        document.querySelectorAll(".checkbox").forEach((item) => {
+            item.checked = false;
+        });
+    });
+}
