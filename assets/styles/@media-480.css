@@ -100,4 +100,7 @@
         bottom: 1px;
         font-size: 16px;
     }
+    .title_final:before{
+        display: none;
+    }
 }

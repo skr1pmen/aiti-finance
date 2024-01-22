@@ -91,15 +91,14 @@ userPhone.addEventListener("input", () => {
    userPhone.value = userPhone.value.replace(/\D/, '');
 });
 
-const links = document.querySelectorAll(".link");
-links.forEach((link) => {
-    if (window.innerWidth <= 480) {
+
+if (window.innerWidth <= 480) {
+    const links = document.querySelectorAll(".link");
+    links.forEach((link) => {
         if (!link.classList.contains("btn")) {
             link.classList.add('deactivate');
         }
-    }
-});
-if (window.innerWidth <= 480) {
+    });
     document.querySelector(".industry_card").classList.remove("active");
     const checkboxs = document.querySelectorAll(".checkbox");
     checkboxs[0].checked = false;
