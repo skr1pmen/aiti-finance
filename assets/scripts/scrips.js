@@ -1,7 +1,7 @@
 window.addEventListener("load", () => {
     setTimeout(() => {
         document.querySelector(".preloader").remove();
-        document.body.style.overflow = 'visible';
+        document.body.style.overflowY = 'visible';
     }, 1000);
 });
 

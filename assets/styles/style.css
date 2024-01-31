@@ -23,6 +23,84 @@ body{
     left: 0;
     width: 100%;
 }
+.bg_anim{
+    left: 102.2%;
+    top: -62.4%;
+    transform: scale(3.3);
+    overflow: hidden;
+    animation-delay: 1s;
+    animation:bg1 25s ease infinite forwards;
+}
+@keyframes bg1 {
+    0%{
+        left: 102.2%;
+        top: -62.4%;
+    }
+    5%{
+        left: 43.2%;
+        top: -62.4%;
+    }
+    10%{
+        left: 33.7%;
+        top: -27.4%;
+    }
+    15%{
+        left: 13.2%;
+        top: -27.4%;
+    }
+    20%{
+        left: 23.2%;
+        top: -61.4%;
+    }
+    25%{
+        left: 13.1%;
+        top: -96.4%;
+    }
+    30%{
+        left: -17.9%;
+        top: 8.6%;
+    }
+    35%{
+        left: -8.1%;
+        top: 42.9%;
+    }
+    40%{
+        left: -28.5%;
+        top: 42.9%;
+    }
+    45%{
+        left: -37.9%;
+        top: 7.9%;
+    }
+    50%{
+        left: -17.9%;
+        top: -62.5%;
+    }
+    55%{
+        left: -28.4%;
+        top: -97.5%;
+    }
+    60%{
+        left: -38.3%;
+        top: -61.5%;
+    }
+    65%{
+        left: -18.3%;
+        top: 8.5%;
+    }
+    70%{
+        left: -100.3%;
+        top: 8.5%;
+    }
+    99%{
+        left: -104.8%;
+        top: -71.5%;
+    }
+    100%{
+        left: 102.2%;
+        top: -71.5%;
+    }
+}
 /*Header*/
 .container > header{
     margin-top: 20px;
