@@ -112,9 +112,15 @@ if (window.innerWidth <= 480) {
     });
 }
 
-particlesJS.load('particles-js', './assets/particles.json', function() {
-    console.log('callback - particles.js config loaded');
-});
+if (window.innerWidth <= 1000) {
+    particlesJS.load('particles-js', './assets/particles_mobile.json', function() {
+        console.log('callback - particles.js config loaded');
+    });
+} else {
+    particlesJS.load('particles-js', './assets/particles.json', function() {
+        console.log('callback - particles.js config loaded');
+    });
+}
 
 
 document.querySelector("#particles-js").style.height=document.body.offsetHeight+"px";
