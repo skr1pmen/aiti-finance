@@ -113,14 +113,15 @@ if (window.innerWidth <= 480) {
 }
 
 if (window.innerWidth <= 1000) {
-    particlesJS.load('particles-js', './assets/particles_mobile.json', function() {
-        console.log('callback - particles.js config loaded');
-    });
+    particles('./assets/particles_mobile.json');
 } else {
-    particlesJS.load('particles-js', './assets/particles.json', function() {
+    particles('./assets/particles.json');
+}
+
+function particles(path) {
+    particlesJS.load('particles-js', `${path}`, function() {
         console.log('callback - particles.js config loaded');
     });
 }
-
 
 document.querySelector("#particles-js").style.height=document.body.offsetHeight+"px";

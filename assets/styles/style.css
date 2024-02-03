@@ -424,6 +424,29 @@ nav{
     transition: border .1s linear;
     cursor: pointer;
 }
+#technology_1:checked ~ p.t_1{
+    display: block;
+}
+#technology_1:checked ~ .technology_1{
+    display: none;
+}
+
+#technology_2:checked ~ p.t_2{
+    display: block;
+}
+#technology_2:checked ~ .technology_2{
+    display: none;
+}
+
+#technology_3:checked ~ p.t_3{
+    display: block;
+}
+#technology_3:checked ~ .technology_3{
+    display: none;
+}
+p.technology_text{
+    display: none;
+}
 .technology_text:hover{
     border: 3px solid var(--accent-color);
 }
