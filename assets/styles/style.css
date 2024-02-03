@@ -10,6 +10,21 @@
     list-style: none;
     text-decoration: none;
 }
+
+#particles-js{
+    margin-top: -20px;
+    position: absolute;
+    width: 100%;
+    height: max-content;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+
+    z-index: -1;
+    left: 0;
+}
+
 body{
     overflow: hidden;
 }
@@ -102,7 +117,7 @@ body{
     }
 }
 /*Header*/
-.container > header{
+header{
     margin-top: 20px;
 }
 nav{
@@ -150,7 +165,7 @@ nav{
     content: "";
     position: absolute;
     right: 0;
-    top: 60px;
+    top: 44px;
     z-index: 1;
     width: 143px;
     height: 16px;
@@ -438,7 +453,7 @@ nav{
 }
 .building_items{
     display: flex;
-    justify-content: center;
+    justify-content: start;
     gap: 31px;
     margin-top: 133px;
 }
