@@ -1,3 +1,5 @@
+"use strict";
+
 window.addEventListener("load", () => {
     setTimeout(() => {
         document.querySelector(".preloader").remove();
@@ -5,32 +7,38 @@ window.addEventListener("load", () => {
     }, 1000);
 });
 
-const industryCard = document.querySelectorAll(".industry_card");
-const title = document.querySelector(".industry_info_title")
-let isIcon = false;
-industryCard.forEach((item) => {
-    item.addEventListener("click", () => {
-        let activeCard = document.querySelector(".active");
-        if (activeCard !== item) {
-            item.classList.add("active");
-            title.innerText = item.querySelector(".industry_card_name").innerText;
-            if (window.innerWidth > 480) {
-                activeCard.classList.remove("active");
-            }
-        }
-        if (window.innerWidth <= 480) {
-            let svg = item.querySelector(".industry_card_name").previousElementSibling;
-            let cloveSvg = svg.cloneNode(true);
-            if (!isIcon) {
-                isIcon = true;
-                document.querySelector(".industry_title").insertBefore(cloveSvg,title);
-            }
-            if (item.classList.contains("active")) {
-                item.classList.remove("active");
-            }
-        }
+
+// БЛОК ОТРАСЛЕЙ
+
+window.addEventListener("load", () => {
+    const industry_cart = document.querySelectorAll(".industry_card"),
+        industry_info = document.querySelectorAll(".industry_card_info_block");
+
+    industry_cart.forEach((cart, i) => {
+        cart.addEventListener("click", () => {
+            industry_cart.forEach(cart => {cart.classList.remove("active")});
+            industry_info.forEach(info => {info.classList.remove("active")});
+            cart.classList.add("active");
+            industry_info[i].classList.add("active");
+        });
     });
 });
+
+// БЛОК ОТРАСЛЕЙ (768PX)
+
+const carts_mobile = document.querySelectorAll(".industry_card_mobile");
+carts_mobile.forEach((cart) => {
+    cart.addEventListener("click", () => {
+        if (cart.classList.contains("active")) {
+            cart.classList.remove("active");
+        } else {
+            carts_mobile.forEach((c) => {c.classList.remove("active")});
+            cart.classList.add("active");
+        }
+
+    });
+});
+
 
 const stageItems = document.querySelectorAll(".stage_btn");
 stageItems.forEach((item) => {
@@ -71,8 +79,7 @@ buildingItem.forEach((item) => {
             nextItem.classList.add("build_active_item");
         }
         if (order.length === 4) {
-
-            console.log(order)
+            document.querySelector(".title_final").classList.add("active");
         }
     });
 });
@@ -99,17 +106,6 @@ if (window.innerWidth <= 480) {
             link.classList.add('deactivate');
         }
     });
-    document.querySelector(".industry_card").classList.remove("active");
-    const checkboxs = document.querySelectorAll(".checkbox");
-    checkboxs[0].checked = false;
-    checkboxs.forEach(item => {
-        item.setAttribute("type", "checkbox");
-    });
-    document.querySelector(".industry_card_info").addEventListener("click", () =>{
-        document.querySelectorAll(".checkbox").forEach((item) => {
-            item.checked = false;
-        });
-    });
 }
 
 if (window.innerWidth <= 1000) {
@@ -119,7 +115,7 @@ if (window.innerWidth <= 1000) {
 }
 
 function particles(path) {
-    particlesJS.load('particles-js', `${path}`, function() {
+    particlesJS.load('particles-js', `./assets/particles.json`, function() {
         console.log('callback - particles.js config loaded');
     });
 }

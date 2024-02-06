@@ -1,6 +1,6 @@
 :root{
     --text-color: #000;
-    --accent-color: #21248A;
+    --accent-color: rgb(33, 36, 138);
     --complementary-color: rgba(30, 30, 30, 0.50);
     --item-background: #D7D8FF;
 }

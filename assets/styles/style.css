@@ -245,7 +245,7 @@ nav{
     margin-top: 52px;
     display: flex;
     justify-content: center;
-    gap: 70px;
+    gap: 55px;
 }
 .industry_cards{
     display: grid;
@@ -293,54 +293,27 @@ nav{
 }
 .industry_info_title{
     font-family: Stem, sans-serif;
-    font-size: 50px;
+    font-size: 3.13rem;
     color: var(--accent-color);
     text-transform: uppercase;
-    margin-bottom: 21px;
+    margin-bottom: 18px;
+    width: min-content;
 }
-.industry_info_list{
+.industry_card_info_block{
     display: none;
 }
-#ind_1:checked ~ .industry_card_info,
-#ind_2:checked ~ .industry_card_info,
-#ind_3:checked ~ .industry_card_info,
-#ind_4:checked ~ .industry_card_info,
-#ind_5:checked ~ .industry_card_info,
-#ind_6:checked ~ .industry_card_info,
-#ind_7:checked ~ .industry_card_info,
-#ind_8:checked ~ .industry_card_info{
- display: block;
-}
-#ind_1:checked ~ .industry_card_info > .industry_info_list_0{
+.industry_card_info_block.active{
     display: block;
 }
-#ind_2:checked ~ .industry_card_info > .industry_info_list_1{
-    display: block;
-}
-#ind_3:checked ~ .industry_card_info > .industry_info_list_2{
-    display: block;
-}
-#ind_4:checked ~ .industry_card_info > .industry_info_list_3{
-    display: block;
-}
-#ind_5:checked ~ .industry_card_info > .industry_info_list_4{
-    display: block;
-}
-#ind_6:checked ~ .industry_card_info > .industry_info_list_5{
-    display: block;
-}
-#ind_7:checked ~ .industry_card_info > .industry_info_list_6{
-    display: block;
-}
-#ind_8:checked ~ .industry_card_info > .industry_info_list_7{
-    display: block;
+.industry_info_list{
+    width: 500px;
 }
 .industry_info_list li{
     font-family: Circe, sans-serif;
-    font-size: 25px;
-    line-height: 40px;
+    font-size: 1.25rem;
+    line-height: 1.56rem;
     text-transform: uppercase;
-    max-width: 434px;
+    max-width: inherit;
     margin-left: 30px;
     position: relative;
 }
@@ -352,11 +325,14 @@ nav{
     z-index: 1;
     position: absolute;
     top: 50%;
-    left: -30px;
+    left: -27px;
     width: 10px;
     height: 10px;
     background: var(--accent-color);
     transform: translateY(-50%);
+}
+.industry_items_mobile{
+    display: none;
 }
 /*Stage Block*/
 .stage_block{
@@ -391,7 +367,7 @@ nav{
 .stage_info{
     font-family: Circe, sans-serif;
     font-size: 25px;
-    line-height: 41px;
+    line-height: 2.56rem;
     text-transform: uppercase;
     width: 780px;
     background: var(--item-background);
@@ -451,6 +427,9 @@ p.technology_text{
     border: 3px solid var(--accent-color);
 }
 /*Building Block*/
+.building_block{
+    width: 100%;
+}
 .progress_bar{
     margin-top: 21px;
     display: flex;
@@ -478,7 +457,8 @@ p.technology_text{
     display: flex;
     justify-content: start;
     gap: 31px;
-    margin-top: 133px;
+    margin: 133px auto 0;
+    width: max-content;
 }
 .building_item{
     width: 206px;
@@ -533,6 +513,7 @@ p.technology_text{
     text-transform: uppercase;
     border-bottom: 1px solid #D7D8FF;
     transition: border-bottom .3s linear;
+    background: none;
 }
 .input:hover,
 .input:focus{
@@ -556,6 +537,7 @@ p.technology_text{
 }
 .phone input{
     padding-left: 24px;
+    position: relative;
 }
 .phone:before{
     content: "+7";
@@ -565,7 +547,7 @@ p.technology_text{
     color: black;
     z-index: 1;
     left: 0;
-    bottom: 19px;
+    top: 49px;
     font-size: 21px;
 }
 .email {
@@ -612,23 +594,29 @@ p.technology_text{
     text-transform: uppercase;
     cursor: pointer;
 }
+.building_items.final{
+    margin-top: 66px;
+}
 .title_final{
+    display: none;
+}
+.title_final.active{
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     position: relative;
 }
-.title_final:before{
+.title_final.active:before{
     content: "";
     position: absolute;
     z-index: -1;
     width: 1200px;
     height: 15px;
-    background: var(--accent-color);
+    background: #21248A80;
 }
-.title_final span{
-    color: var(--accent-color);
+.title_final.active span{
+    color: #21248A80;
     font-family: Stem, sans-serif;
     font-size: 30px;
     text-transform: uppercase;
@@ -636,9 +624,577 @@ p.technology_text{
     background: #fff;
     padding: 0 25px;
 }
-.title_final span:first-child{
+.title_final.active span:first-child{
     padding-left: 0;
 }
-.title_final span:last-child{
+.title_final.active span:last-child{
     padding-right: 0;
+}
+
+@media screen and (max-width: 1000px) {
+    .container{
+        max-width: 960px;
+    }
+    .logo svg{
+        width: 98px;
+        height: 54px;
+    }
+    .link a{
+        font-size: 15px;
+    }
+    .main_title{
+        font-size: 60px;
+    }
+    .main_title:after{
+        width: 112px;
+        height: 10px;
+        top: 37px;
+    }
+    .main_description{
+        font-size: 25px;
+    }
+    .title{
+        font-size: 46px;
+    }
+    .service_item{
+        width: 207px;
+        height: 209px;
+    }
+
+    .service_icon{
+        width: 70px;
+        height: 70px;
+    }
+    .service_name{
+        font-size: 20px;
+    }
+    .service_block .btn{
+        font-size: 22px;
+    }
+    .industry_cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .industry_info_title{
+        font-size: 36px;
+    }
+    .industry_info_list li{
+        font-size: 20px;
+    }
+    .stage_btn div{
+        font-size: 50px;
+    }
+    .stage_btn{
+        font-size: 40px;
+    }
+    .building_items{
+        flex-wrap: wrap;
+        justify-content: start;
+        margin: 0 auto;
+    }
+    .building_items.build_active_item{
+        width: calc(12.58rem * 3 + 32px * 2);
+        margin: 0 auto;
+    }
+    .building_item{
+        width: 12.58rem;
+        height: 12.71rem;
+    }
+    .preloader svg{
+        width: 300px;
+        height: 300px;
+    }
+    .title_final.active:before{
+        width: 909px;
+    }
+    .title_final.active span{
+        font-size: 24px;
+    }
+    .name,.phone{
+        grid-area: auto;
+    }
+    .name{
+        grid-area: 1 / 1 / 2 / 2;
+    }
+    .email{
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    .phone{
+        grid-area: 2 / 2 / 3 / 3;
+    }
+    .text{
+        grid-area: 3 / 1 / 4 / 3;
+    }
+    .file{
+        grid-area: 4 / 1 / 5 / 2;
+    }
+    .final form button{
+         grid-area: 5 / 1 / 6 / 2;
+     }
+    .building_items form button{
+        font-size: 19px;
+    }
+    .building_items.final.build_active_item{
+        width: 100%;
+    }
+    .building_items.final form{
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+        grid-template-rows: repeat(5, 1fr);
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 640px;
+    }
+    .logo svg{
+        width: 64px;
+        height: 35px;
+    }
+    .link a{
+        font-size: 10px;
+    }
+    .main_title{
+        font-size: 40px;
+    }
+    .main_title:after{
+        width: 76px;
+        height: 7px;
+        top: 24px;
+    }
+    .main_description{
+        font-size: 15px;
+        line-height: 21px;
+    }
+    .title{
+        font-size: 32px;
+    }
+    .services_items{
+        flex-wrap: wrap;
+    }
+    .service_item{
+        width: 207px;
+        height: 209px;
+    }
+
+    .service_icon{
+        width: 70px;
+        height: 70px;
+    }
+    .service_name{
+        font-size: 20px;
+    }
+    .service_block .btn{
+        font-size: 22px;
+    }
+
+    .industry_items{
+        display: none;
+    }
+    .industry_items_mobile{
+        display: block;
+        margin: 42px auto 0;
+        width: max-content;
+    }
+    .industry_cards_mobile{
+        display: flex;
+        width: calc(10.62rem * 3 + 50px);
+        flex-wrap: wrap;
+        gap: 20px 25px;
+        align-items: end;
+    }
+    .industry_card_mobile{
+        width: 10.62rem;
+        height: 9.22rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 8px;
+        align-content: center;
+        padding: 15px;
+        background: var(--item-background);
+        cursor: pointer;
+    }
+    .industry_card_name_mobile{
+        font-family: 'Circe', sans-serif;
+        text-transform: uppercase;
+        font-size: clamp(1rem, 18px,1.25rem);
+        line-height: 1.44rem;
+        display: flex;
+        align-items: center;
+    }
+    .industry_info_list_mobile{
+        display: none;
+    }
+    .industry_card_mobile.active{
+        grid-template-areas: "icon title" "list list";
+        grid-template-columns: min-content auto;
+        align-content: start;
+        width: 22.78rem;
+        height: max-content;
+        box-shadow: -6px 6px 5.5px rgba(171, 171, 175, 0.82);;
+    }
+    .industry_card_mobile.active > .industry_info_list_mobile{
+        grid-area: list;
+        font-family: Circe, sans-serif;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-left: 21px;
+    }
+    .industry_info_list_mobile li{
+        position: relative;
+    }
+    .industry_info_list_mobile li:after{
+        content: "";
+        width: 0.35rem;
+        height: 0.31rem;
+        background: var(--accent-color);
+        position: absolute;
+        left: -18px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .industry_card_mobile.active > .industry_card_icon_mobile{
+        fill: var(--accent-color);
+        height: 3.13rem;
+    }
+    .industry_card_mobile.active > .icon_s{
+        fill: none;
+        stroke: var(--accent-color);
+        height: 3.13rem;
+    }
+    .industry_card_mobile.active > .industry_card_name_mobile{
+        color: var(--accent-color);
+        font-size: 1.56rem;
+        line-height: 2rem;
+    }
+
+    .stage_btn div{
+        font-size: 32px;
+        width: 45px;
+        height: 45px;
+    }
+    .stage_info{
+        font-size: 15px;
+        width: 492px;
+        line-height: 22px;
+        margin-left: 85px;
+        padding-left: 10px;
+    }
+    .stage_info.visible{
+        padding: 8px 15px 8px;
+        margin: 28px 0 20px 85px;
+        max-height: max-content;
+        overflow: visible;
+    }
+    .stage_btn{
+        font-size: 22px;
+    }
+    .building_items{
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+    .building_item{
+        width: 201px;
+        height: 203px;
+    }
+    .technology_items{
+        gap: 15px;
+    }
+    .technology_text{
+        font-size: 13px;
+        padding: 7px 15px;
+    }
+    .hint{
+        font-size: 15px;
+    }
+    .progress{
+        width: 120px;
+        height: 10px;
+    }
+    .building_item svg{
+        width: 62px;
+        height: 62px;
+    }
+    .building_item span{
+        font-size: 20px;
+    }
+
+    .preloader svg{
+        width: 300px;
+        height: 300px;
+    }
+    .title_final:before{
+        width: 100%;
+    }
+    .title_final span{
+        font-size: 24px;
+    }
+    .building_items.final form{
+        width: 100%;
+        font-size: 18px;
+    }
+    .title_final span{
+        padding: 0;
+        font-size: 20px;
+    }
+    .title_final{
+        gap: 10px;
+    }
+    .name,.phone{
+        grid-area: auto;
+    }
+    .building_items form button{
+        font-size: 14px;
+    }
+    .input{
+        font-size: 16px;
+    }
+    .title_final.active span{
+        font-size: 1.13rem;
+        padding: 0 10px;
+    }
+    .title_final.active::before{
+        width: 640px;
+    }
+    .phone::before{
+        font-size: 17px;
+        top: 39px;
+    }
+    .final form button{
+        grid-area: 5 / 1 / 6 / 3;
+        padding: 19px 52px;
+        width: max-content;
+        height: min-content;
+        margin:  0 auto;
+    }
+    .building_items.build_active_item {
+        width: calc(12.58rem * 2 + 32px * 2);
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container{
+        max-width: 98%;
+    }
+    .link.deactivate{
+        display: none;
+    }
+    .btn a{
+        font-size: 10px;
+        padding: 1px 10px;
+    }
+    .logo svg{
+        width: 58px;
+        height: 30px;
+    }
+    .main_title{
+        font-size: 40px;
+    }
+    .main_title:after{
+        display: none;
+    }
+    .main_description{
+        font-size: 12px;
+    }
+    .title{
+        font-size: 32px;
+        padding-top: 0;
+    }
+    .service_block{
+        height: max-content;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .services_items{
+        margin: 0;
+        justify-content: center;
+    }
+    .service_block .btn{
+        margin: 0 auto;
+    }
+
+    .industry_cards_mobile{
+        display: flex;
+        width: calc(9.53rem * 2 + 50px);
+    }
+    .industry_card_mobile{
+        width: 9.53rem;
+        height: 8.28rem;
+    }
+    .industry_card_mobile.active{
+        width: 20.63rem;
+    }
+    .industry_card_name_mobile{
+        font-size: 0.94rem;
+    }
+    .industry_card_name_mobile.active{
+        font-size: 1.56rem;
+    }
+
+    .stage_btn{
+        gap: 10px;
+        margin: 30px 0 0;
+    }
+    .stage_btn div{
+        font-size: 25px;
+        width: 32px;
+        height: 32px;
+    }
+    .stage_btn span{
+        font-size: 20px;
+        width: 100%;
+    }
+    .stage_info{
+        margin: 0;
+        font-size: 15px;
+        line-height: 15px;
+    }
+    .stage_info.visible{
+        margin: 20px 0;
+        padding: 15px 13px;
+        width: 100%;
+    }
+    .building_items{
+        justify-content: center;
+    }
+    .title_final.active:before {
+        content: "";
+        width: 450px;
+        height: 3px;
+    }
+    .title_final.active span{
+        font-size: 0.7rem;
+    }
+    .phone:before{
+        bottom: 1px;
+        font-size: 16px;
+    }
+    .building_items.final.build_active_item{
+        display: block;
+    }
+    .building_items.final.build_active_item form{
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(5, 1fr);
+        width: 100%;
+        padding: 0;
+        grid-gap: 0;
+    }
+    .file_title{
+        font-size: 0.75rem;
+    }
+    .file_desc{
+        font-size: 0.75rem;
+    }
+    .file img{
+        width: 2.68rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .container{
+        max-width: 300px;
+    }
+    .preloader svg{
+        width: 150px;
+        height: 150px;
+    }
+    .service_item,
+    .industry_card,
+    .building_item{
+        width: 122px;
+        height: 123px;
+    }
+    .service_icon,
+    .industry_card_icon,
+    .building_item svg{
+        width: 40px;
+        height: 40px;
+    }
+    .service_name,
+    .industry_card_name,
+    .building_item > .building_name{
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .service_block .btn{
+        font-size: 15px;
+        margin: 60px auto 0;
+    }
+
+    .industry_cards_mobile{
+        display: flex;
+        width: calc(9.53rem * 2 + 50px);
+    }
+    .industry_card_mobile{
+        width: 8.53rem;
+        height: 8.28rem;
+    }
+    .industry_card_mobile.active{
+        width: 300px;
+    }
+    .industry_card_name_mobile{
+        font-size: 0.94rem;
+    }
+    .industry_card_name_mobile.active{
+        font-size: 1.56rem;
+    }
+
+    .stage_btn{
+        gap: 5px;
+    }
+    .stage_btn:not(:last-child){
+        margin: 0 0 3px;
+    }
+    .stage_btn div {
+        font-size: 20px;
+        width: 25px;
+        height: 25px;
+    }
+    .stage_btn span{
+        font-size: 15px;
+    }
+    .stage_info{
+        margin: 0;
+        font-size: 10px;
+        line-height: 15px;
+    }
+    .stage_info.visible{
+        margin: 20px 0;
+        padding: 15px 13px;
+        width: 100%;
+    }
+    .technology_items{
+        justify-content: start;
+        margin: 70px 0;
+    }
+    .phone,.name,.file,.email,.text{
+        font-size: 0.75rem;
+    }
+    .title_final.active span {
+        font-size: 0.6rem;
+        padding: 0;
+    }
+    .title_final.active:before {
+        content: "";
+        width: 300px;
+        height: 3px;
+    }
+    .phone:before {
+        top: 30px;
+    }
+    .building_items.build_active_item {
+        width: calc(7.78rem * 2 + 19px);
+        margin: 0 auto;
+        justify-content: start;
+        gap: 19px 23px;
+    }{
+
+}
 }
