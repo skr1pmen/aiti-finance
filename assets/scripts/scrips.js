@@ -115,7 +115,7 @@ if (window.innerWidth <= 1000) {
 }
 
 function particles(path) {
-    particlesJS.load('particles-js', `./assets/particles.json`, function() {
+    particlesJS.load('particles-js', `${path}`, function() {
         console.log('callback - particles.js config loaded');
     });
 }
