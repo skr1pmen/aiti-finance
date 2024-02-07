@@ -109,5 +109,3 @@ function particles(path) {
         console.log('callback - particles.js config loaded');
     });
 }
-
-document.querySelector("#particles-js").style.height=document.body.offsetHeight+"px";

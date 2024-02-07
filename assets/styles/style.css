@@ -13,9 +13,9 @@
 
 #particles-js{
     margin-top: -20px;
-    position: absolute;
+    position: fixed;
     width: 100%;
-    height: max-content;
+    height: 100svh;
     background-color: #fff;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1078,6 +1078,9 @@ p.technology_text{
     .phone:before{
         bottom: 1px;
         font-size: 16px;
+    }
+    #building{
+        margin-top: 35px;
     }
     .building_items.final.build_active_item{
         display: block;
