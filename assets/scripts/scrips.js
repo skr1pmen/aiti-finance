@@ -98,16 +98,6 @@ userPhone.addEventListener("input", () => {
    userPhone.value = userPhone.value.replace(/\D/, '');
 });
 
-
-if (window.innerWidth <= 480) {
-    const links = document.querySelectorAll(".link");
-    links.forEach((link) => {
-        if (!link.classList.contains("btn")) {
-            link.classList.add('deactivate');
-        }
-    });
-}
-
 if (window.innerWidth <= 1000) {
     particles('./assets/particles_mobile.json');
 } else {

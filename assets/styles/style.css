@@ -747,7 +747,7 @@ p.technology_text{
 
 @media screen and (max-width: 768px) {
     .container {
-        max-width: 640px;
+        width: clamp(600px, 640px, calc(100% - 20px));
     }
     .logo svg{
         width: 64px;
@@ -978,12 +978,15 @@ p.technology_text{
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 486px) {
     .container{
-        max-width: 98%;
+        width: clamp(94%, 96%, 98%);
     }
-    .link.deactivate{
+    .link{
         display: none;
+    }
+    .link.btn{
+        display: block;
     }
     .btn a{
         font-size: 10px;
@@ -1079,12 +1082,24 @@ p.technology_text{
     .building_items.final.build_active_item{
         display: block;
     }
+    .building_items.build_active_item {
+        width: calc(10.62rem * 2 + 31px);
+        margin: 0 auto;
+        justify-content: start;
+    }
+    .building_item{
+        width: 10.62rem;
+        height: 10.75rem;
+    }
     .building_items.final.build_active_item form{
         grid-template-columns: repeat(2, 50%);
         grid-template-rows: repeat(5, 1fr);
         width: 100%;
         padding: 0;
         grid-gap: 0;
+    }
+    .building_item span{
+        font-size: clamp(13px, 18px, 20px);
     }
     .file_title{
         font-size: 0.75rem;
@@ -1097,9 +1112,24 @@ p.technology_text{
     }
 }
 
+@media screen and (max-width: 400px) {
+    .building_items.build_active_item {
+        width: calc(8.62rem * 2 + 31px);
+        margin: 0 auto;
+        justify-content: start;
+    }
+    .building_item{
+         width: 8.62rem;
+         height: 8.75rem;
+     }
+    .building_item span{
+        font-size: clamp(10px, 13px, 28px);
+    }
+}
+
 @media screen and (max-width: 320px) {
     .container{
-        max-width: 300px;
+        width: clamp(92%, 300px, 98%);
     }
     .preloader svg{
         width: 150px;
@@ -1194,7 +1224,5 @@ p.technology_text{
         margin: 0 auto;
         justify-content: start;
         gap: 19px 23px;
-    }{
-
-}
+    }
 }
