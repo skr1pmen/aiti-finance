@@ -352,7 +352,7 @@ nav{
     text-transform: uppercase;
     cursor: pointer;
 }
-.stage_btn p{
+.stage_num{
     width: 66px;
     height: 66px;
     background: var(--accent-color);
