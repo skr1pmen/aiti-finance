@@ -306,6 +306,10 @@ nav{
     font-size: 40px;
     text-transform: uppercase;
     cursor: pointer;
+    padding-right: 10px;
+}
+.stage_btn:hover{
+    background: rgba(128, 128, 128, 0.25);
 }
 .stage_btn div{
     width: 66px;
@@ -467,7 +471,6 @@ p.technology_text{
     border: none;
     font-family: Circe, sans-serif;
     font-size: 20px;
-    text-transform: uppercase;
     border-bottom: 1px solid #D7D8FF;
     transition: border-bottom .3s linear;
     background: none;
@@ -627,7 +630,7 @@ p.technology_text{
     right: 0;
 }
 
-.loader,.loader svg{
+.loader,.loader > svg{
     display: none;
 }
 .loader.active{
@@ -640,7 +643,8 @@ p.technology_text{
     justify-content: center;
     align-items: center;
 }
-.loader.active svg{
+.loader.active > svg{
+    display: block;
     fill: #1f2389;
     animation: spin 2s linear infinite;
 }
