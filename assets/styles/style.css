@@ -46,76 +46,6 @@ body{
     animation-delay: 1s;
     animation:bg1 25s ease infinite forwards;
 }
-@keyframes bg1 {
-    0%{
-        left: 102.2%;
-        top: -62.4%;
-    }
-    5%{
-        left: 43.2%;
-        top: -62.4%;
-    }
-    10%{
-        left: 33.7%;
-        top: -27.4%;
-    }
-    15%{
-        left: 13.2%;
-        top: -27.4%;
-    }
-    20%{
-        left: 23.2%;
-        top: -61.4%;
-    }
-    25%{
-        left: 13.1%;
-        top: -96.4%;
-    }
-    30%{
-        left: -17.9%;
-        top: 8.6%;
-    }
-    35%{
-        left: -8.1%;
-        top: 42.9%;
-    }
-    40%{
-        left: -28.5%;
-        top: 42.9%;
-    }
-    45%{
-        left: -37.9%;
-        top: 7.9%;
-    }
-    50%{
-        left: -17.9%;
-        top: -62.5%;
-    }
-    55%{
-        left: -28.4%;
-        top: -97.5%;
-    }
-    60%{
-        left: -38.3%;
-        top: -61.5%;
-    }
-    65%{
-        left: -18.3%;
-        top: 8.5%;
-    }
-    70%{
-        left: -100.3%;
-        top: 8.5%;
-    }
-    99%{
-        left: -104.8%;
-        top: -71.5%;
-    }
-    100%{
-        left: 102.2%;
-        top: -71.5%;
-    }
-}
 /*Header*/
 header{
     margin-top: 20px;
@@ -126,6 +56,10 @@ nav{
     height: 63px;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+}
+.mobile_menu,.menu{
+    display: none;
 }
 .links ul {
     display: flex;
@@ -137,6 +71,27 @@ nav{
     color: var(--text-color);
     font-size: 20px;
     text-transform: uppercase;
+}
+.link a:after{
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    content: "";
+    position: relative;
+    bottom: 5px;
+    left: 0;
+    transition: width .2s linear;
+}
+.link a:hover:after{
+    width: 100%;
+}
+.btn a:after{
+    display: none;
+}
+.btn:hover{
+    transform: translateY(-5px) scale(1.01);
+    transition: transform .2s ease;
 }
 .btn a{
     font-family: "Stem", sans-serif;
@@ -429,6 +384,7 @@ p.technology_text{
 /*Building Block*/
 .building_block{
     width: 100%;
+    height: 100svh;
 }
 .progress_bar{
     margin-top: 21px;
@@ -602,6 +558,7 @@ p.technology_text{
 }
 .title_final.active{
     display: flex;
+    grid-template-columns: repeat(7, auto);
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -620,8 +577,8 @@ p.technology_text{
     font-family: Stem, sans-serif;
     font-size: 30px;
     text-transform: uppercase;
-    width: min-content;
     background: #fff;
+    width: min-content;
     padding: 0 25px;
 }
 .title_final.active span:first-child{
@@ -657,7 +614,7 @@ p.technology_text{
 .contact_block div{
     color: var(--accent-color);
 }
-.contact_block span a{
+.contact_block a{
     color: var(--text-color);
 }
 .contact_img{
@@ -1026,15 +983,73 @@ p.technology_text{
 
 }
 
-@media screen and (max-width: 486px) {
+@media screen and (max-width: 486px){
     .container{
         width: clamp(94%, 96%, 98%);
     }
-    .link{
-        display: none;
+
+    .menu{
+        width: 30px;
+        height: 30px;
+        display: flex;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: center;
     }
-    .link.btn{
+    .menu_btn,.menu_btn:after,.menu_btn:before{
+        width: 30px;
+        height: 4px;
         display: block;
+        background: var(--accent-color);
+        position: absolute;
+        cursor: pointer;
+        transition: all .2s linear;
+    }
+    .menu>.menu_btn:after{
+        content: "";
+        top: -10px;
+        position: absolute;
+    }
+    .menu>.menu_btn:before{
+         content: "";
+         top: 10px;
+         position: absolute;
+    }
+    .menu_link:checked ~ .menu>.menu_btn{
+        background: none;
+    }
+    .menu_link:checked ~ .menu>.menu_btn:after{
+        transform: rotate(45deg) translate(5px, 10px);
+    }
+    .menu_link:checked ~ .menu>.menu_btn:before{
+        transform: rotate(-45deg) translate(4px, -10px);
+    }
+    .menu_link:not(:checked) ~ .mobile_menu{
+        transform: translateX(100%);
+    }
+    .mobile_menu{
+        position: relative;
+        display: block;
+        top: 20px;
+        z-index: 2;
+        width: 100%;
+        transition: transform .3s linear;
+    }
+    .mobile_menu ul{
+        display: flex;
+        align-items: end;
+        gap: 10px;
+        flex-direction: column;
+    }
+    .mobile_menu ul li{
+        text-align: right;
+    }
+    .mobile_menu ul li a{
+        width: 100%;
+        font-size: 1.2rem;
+    }
+    .links{
+        display: none;
     }
     .btn a{
         font-size: 10px;
@@ -1163,7 +1178,7 @@ p.technology_text{
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 400px), (pointer: coarse){
     .building_items.build_active_item {
         width: calc(8.62rem * 2 + 31px);
         margin: 0 auto;
@@ -1178,7 +1193,7 @@ p.technology_text{
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 320px), (pointer: coarse){
     .container{
         width: clamp(92%, 300px, 98%);
     }
