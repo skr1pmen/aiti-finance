@@ -98,6 +98,16 @@ userPhone.addEventListener("input", () => {
    userPhone.value = userPhone.value.replace(/\D/, '');
 });
 
+const userMessage = document.querySelector("textarea");
+userMessage.addEventListener("keydown", resize)
+
+function resize() {
+    let el = this;
+    setTimeout(() => {
+        el.style.height = el.scrollHeight + 1 + "px"
+    },1);
+}
+
 if (window.innerWidth <= 1000) {
     particles('./assets/particles_mobile.json');
 } else {
