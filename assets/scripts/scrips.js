@@ -86,7 +86,7 @@ buildingItem.forEach((item) => {
 
 const userFile = document.querySelector("#user_file");
 userFile.addEventListener("change", (event) => {
-    if (userFile.files[0].size !== 5242880) {
+    if (userFile.files[0].size < 5 * 1024 * 1024) {
         userFile.value = '';
         return false;
     }
