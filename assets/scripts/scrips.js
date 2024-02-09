@@ -1,10 +1,9 @@
 "use strict";
-
 window.addEventListener("load", () => {
     setTimeout(() => {
         document.querySelector(".preloader").remove();
         document.body.style.overflowY = 'visible';
-    }, 1000);
+    }, 1500);
 });
 
 

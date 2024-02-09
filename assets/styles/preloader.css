@@ -1,4 +1,5 @@
 .preloader{
+    display: flex;
     width: 100%;
     height: 100vh;
     justify-content: center;
@@ -7,11 +8,7 @@
     z-index: 999;
     background: #fff;
     margin-top: -20px;
-    display: none;
     transition: display 2s linear;
-}
-.preloader.active{
-    display: flex;
 }
 .preloader svg{
     width: 350px;
