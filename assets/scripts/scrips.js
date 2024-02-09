@@ -85,7 +85,7 @@ buildingItem.forEach((item) => {
 });
 
 const userFile = document.querySelector("#user_file");
-userFile.addEventListener("change", (event) => {
+userFile.addEventListener("change", () => {
     if (userFile.files[0].size > 5 * 1024 * 1024) {
         userFile.value = '';
         alert("Файл слишком большой!");

@@ -10,6 +10,32 @@
     list-style: none;
     text-decoration: none;
 }
+.main_title,
+.title,
+.service_block .btn,
+.industry_info_title,
+.hint,
+.building_items form button,
+.title_final.active span{
+    font-family: Stem, sans-serif;
+    text-transform: uppercase;
+}
+.main_description,
+.service_name,
+.industry_card_name,
+.industry_info_list li,
+.stage_btn,
+.stage_btn div,
+.stage_info,
+.technology_text,
+.building_name,
+.building_items.final form,
+.input,
+.contacts_blocks,
+.industry_card_mobile.active > .industry_info_list_mobile{
+    font-family: Circe, sans-serif;
+    text-transform: uppercase;
+}
 
 #particles-js{
     margin-top: -20px;
@@ -20,7 +46,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
-
     z-index: -1;
     left: 0;
 }
@@ -31,20 +56,6 @@ body{
 .container{
     width: 1200px;
     margin: 0 auto;
-}
-.background{
-    position: absolute;
-    z-index: -1;
-    left: 0;
-    width: 100%;
-}
-.bg_anim{
-    left: 102.2%;
-    top: -62.4%;
-    transform: scale(3.3);
-    overflow: hidden;
-    animation-delay: 1s;
-    animation:bg1 25s ease infinite forwards;
 }
 /*Header*/
 header{
@@ -58,7 +69,19 @@ nav{
     align-items: center;
     flex-wrap: wrap;
 }
-.mobile_menu,.menu{
+.mobile_menu,
+.menu,
+.title_final,
+.building_block .title,
+.building_block .building_items,
+p.technology_text,
+#technology_1:checked ~ .technology_1,
+#technology_2:checked ~ .technology_2,
+#technology_3:checked ~ .technology_3,
+.industry_items_mobile,
+.industry_card_info_block,
+.loader svg,
+ul .btn a:after{
     display: none;
 }
 .links ul {
@@ -83,11 +106,9 @@ nav{
     left: 0;
     transition: width .2s linear;
 }
-.link a:hover:after{
+.link a:hover:after,
+.stage_btn:hover:after{
     width: 100%;
-}
-.btn a:after{
-    display: none;
 }
 .btn:hover,.building_items form button:hover{
     transform: translateY(-5px) scale(1.01);
@@ -110,7 +131,6 @@ nav{
     flex-direction: column;
 }
 .main_title{
-    font-family: Stem, sans-serif;
     font-size: 75px;
     text-transform: uppercase;
     color: var(--accent-color);
@@ -127,11 +147,9 @@ nav{
     background: var(--accent-color);
 }
 .main_description{
-    font-family: Circe, sans-serif;
     font-size: 30px;
     color: var(--complementary-color);
     line-height: 41px;
-    text-transform: uppercase;
     text-wrap: balance;
 }
 /*Service Block*/
@@ -141,10 +159,8 @@ nav{
     display: block;
 }
 .title{
-    font-family: Stem, sans-serif;
     font-size: 60px;
     color: var(--accent-color);
-    text-transform: uppercase;
     padding-top: 90px;
 }
 .services_items{
@@ -166,12 +182,12 @@ nav{
     cursor: pointer;
 }
 .service_name{
-    font-family: Circe, sans-serif;
     font-size: 25px;
-    text-transform: uppercase;
 }
 
-.service_item:hover{
+.service_item:hover,
+.industry_card.active,.industry_card:hover,
+.contact_block:hover{
     box-shadow: -6px 6px 5.5px rgba(171, 171, 175, 0.82);
 }
 .service_item:hover .service_icon,
@@ -180,9 +196,7 @@ nav{
     fill: var(--accent-color);
 }
 .service_block .btn{
-    font-family: Stem, sans-serif;
     font-size: 28px;
-    text-transform: uppercase;
     color: #fff;
     padding: 19px 24px;
     background: var(--accent-color);
@@ -222,53 +236,43 @@ nav{
     gap: 10px;
     cursor: pointer;
 }
-.industry_card.active,.industry_card:hover{
-    box-shadow: -6px 6px 5.5px rgba(171, 171, 175, 0.82);
-}
 .industry_card.active,
 .industry_card.active .industry_card_icon{
     color: var(--accent-color);
     fill: var(--accent-color);
     stroke: var(--accent-color);
-    /*fill: none;*/
 }
 .industry_card.active:nth-child(1),
 .industry_card.active:nth-child(1) .industry_card_icon,
 .industry_card.active:nth-child(3),
 .industry_card.active:nth-child(3) .industry_card_icon{
     color: var(--accent-color);
-    /*fill: var(--accent-color);*/
     stroke: var(--accent-color);
     fill: none;
 }
 .industry_card_name{
-    font-family: Circe, sans-serif;
     font-size: 20px;
     line-height: 23px;
-    text-transform: uppercase;
 }
 .industry_info_title{
-    font-family: Stem, sans-serif;
     font-size: 3.13rem;
     color: var(--accent-color);
-    text-transform: uppercase;
     margin-bottom: 18px;
     width: min-content;
 }
-.industry_card_info_block{
-    display: none;
-}
-.industry_card_info_block.active{
+
+.industry_card_info_block.active,
+#technology_1:checked ~ p.t_1,
+#technology_2:checked ~ p.t_2,
+#technology_3:checked ~ p.t_3{
     display: block;
 }
 .industry_info_list{
     width: 500px;
 }
 .industry_info_list li{
-    font-family: Circe, sans-serif;
     font-size: 1.25rem;
     line-height: 1.56rem;
-    text-transform: uppercase;
     max-width: inherit;
     margin-left: 30px;
     position: relative;
@@ -287,9 +291,6 @@ nav{
     background: var(--accent-color);
     transform: translateY(-50%);
 }
-.industry_items_mobile{
-    display: none;
-}
 /*Stage Block*/
 .stage_block{
     width: 100%;
@@ -303,9 +304,7 @@ nav{
     width: max-content;
     margin: 30px 39px 0;
     align-items: center;
-    font-family: Circe, sans-serif;
     font-size: 40px;
-    text-transform: uppercase;
     cursor: pointer;
     padding-right: 10px;
     position: relative;
@@ -323,9 +322,6 @@ nav{
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
 }
-.stage_btn:hover:after{
-    width: 100%;
-}
 .stage_btn div{
     width: 66px;
     height: 66px;
@@ -334,15 +330,11 @@ nav{
     justify-content: center;
     align-items: center;
     color: #EDEDF0;
-    font-family: Circe, sans-serif;
     font-size: 50px;
-    text-transform: uppercase;
 }
 .stage_info{
-    font-family: Circe, sans-serif;
     font-size: 25px;
     line-height: 2.56rem;
-    text-transform: uppercase;
     width: 780px;
     background: var(--item-background);
     max-height: 0;
@@ -366,36 +358,11 @@ nav{
 }
 .technology_text{
     padding: 12px 26px;
-    font-family: Circe, sans-serif;
     font-size: 21px;
-    text-transform: uppercase;
     background: var(--item-background);
     border: 3px solid var(--item-background);
     transition: border .1s linear;
     cursor: pointer;
-}
-#technology_1:checked ~ p.t_1{
-    display: block;
-}
-#technology_1:checked ~ .technology_1{
-    display: none;
-}
-
-#technology_2:checked ~ p.t_2{
-    display: block;
-}
-#technology_2:checked ~ .technology_2{
-    display: none;
-}
-
-#technology_3:checked ~ p.t_3{
-    display: block;
-}
-#technology_3:checked ~ .technology_3{
-    display: none;
-}
-p.technology_text{
-    display: none;
 }
 .technology_text:hover{
     border: 3px solid var(--accent-color);
@@ -413,9 +380,7 @@ p.technology_text{
 }
 .hint{
     color: var(--accent-color);
-    font-family: Stem, sans-serif;
     font-size: 20px;
-    text-transform: uppercase;
 }
 .progress{
     width: 150px;
@@ -459,13 +424,7 @@ p.technology_text{
     stroke: var(--accent-color);
 }
 .building_name{
-    font-family: Circe, sans-serif;
     font-size: 20px;
-    text-transform: uppercase;
-}
-.building_block .title,
-.building_block .building_items{
-    display: none;
 }
 .title.build_active_title,
 .building_items.build_active_item{
@@ -477,14 +436,12 @@ p.technology_text{
     grid-template-rows: repeat(3, auto);
     padding: 27px;
     grid-gap: 17px;
-    font-family: Circe, sans-serif;
     font-size: 25px;
-    text-transform: uppercase;
     position: relative;
 }
 .input{
     border: none;
-    font-family: Circe, sans-serif;
+    text-transform: none;
     font-size: 20px;
     border-bottom: 1px solid #D7D8FF;
     transition: border-bottom .3s linear;
@@ -498,17 +455,16 @@ p.technology_text{
 .input::placeholder{
     color: #D7D8FF;
 }
-.name {
-    grid-area: 1 / 1 / 2 / 2;
+.name,.phone,.email,.text{
     display: flex;
     flex-direction: column;
     gap: 13px;
 }
+.name {
+    grid-area: 1 / 1 / 2 / 2;
+}
 .phone {
     grid-area: 1 / 2 / 2 / 3;
-    display: flex;
-    flex-direction: column;
-    gap: 13px;
     position: relative;
 }
 .phone input{
@@ -528,15 +484,9 @@ p.technology_text{
 }
 .email {
     grid-area: 1 / 3 / 2 / 4;
-    display: flex;
-    flex-direction: column;
-    gap: 13px;
 }
 .text {
     grid-area: 2 / 1 / 3 / 4;
-    display: flex;
-    flex-direction: column;
-    gap: 13px;
     height: max-content;
 }
 .file {
@@ -562,20 +512,16 @@ p.technology_text{
     height: max-content;
 }
 .building_items form button{
+    grid-area: 4 / 1 / 5 / 2;
     background: var(--accent-color);
     padding: 19px 52px;
     color: #fff;
-    font-family: Stem, sans-serif;
     font-size: 26px;
-    text-transform: uppercase;
     cursor: pointer;
     border: none;
 }
 .building_items.final{
     margin-top: 66px;
-}
-.title_final{
-    display: none;
 }
 .title_final.active{
     display: flex;
@@ -594,9 +540,7 @@ p.technology_text{
 }
 .title_final.active span{
     color: #21248A80;
-    font-family: Stem, sans-serif;
     font-size: 30px;
-    text-transform: uppercase;
     background: #fff;
     width: min-content;
     padding: 0 25px;
@@ -619,10 +563,8 @@ p.technology_text{
     flex-direction: column;
     gap: 62px;
     width: max-content;
-    font-family: Circe, sans-serif;
     font-size: 1.88rem;
     line-height: 2.75rem;
-    text-transform: uppercase;
 }
 .contact_block{
     padding: 30px;
@@ -630,9 +572,6 @@ p.technology_text{
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
-.contact_block:hover{
-    box-shadow: -6px 6px 5.5px rgba(171, 171, 175, 0.82);
 }
 .contact_block div{
     color: var(--accent-color);
@@ -648,9 +587,6 @@ p.technology_text{
     right: 0;
 }
 
-.loader,.loader > svg{
-    display: none;
-}
 .loader.active{
     position: absolute;
     width: 100%;
@@ -881,9 +817,7 @@ p.technology_text{
     }
     .industry_card_mobile.active > .industry_info_list_mobile{
         grid-area: list;
-        font-family: Circe, sans-serif;
         font-size: 0.75rem;
-        text-transform: uppercase;
         display: flex;
         flex-direction: column;
         gap: 15px;
