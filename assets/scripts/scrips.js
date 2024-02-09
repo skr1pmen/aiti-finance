@@ -151,7 +151,7 @@ feedbackForm.onsubmit = async (e) => {
 
         let response = await fetch('/feedback', {
             method: 'POST',
-            body: new FormData(feedbackForm)
+            body: data
         });
 
         let result = await response.json();
