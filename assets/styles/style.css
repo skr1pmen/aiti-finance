@@ -89,7 +89,7 @@ nav{
 .btn a:after{
     display: none;
 }
-.btn:hover{
+.btn:hover,.building_items form button:hover{
     transform: translateY(-5px) scale(1.01);
     transition: transform .2s ease;
 }
@@ -163,6 +163,7 @@ nav{
     justify-content: end;
     align-items: start;
     gap: 10px;
+    cursor: pointer;
 }
 .service_name{
     font-family: Circe, sans-serif;
@@ -221,7 +222,7 @@ nav{
     gap: 10px;
     cursor: pointer;
 }
-.industry_card.active{
+.industry_card.active,.industry_card:hover{
     box-shadow: -6px 6px 5.5px rgba(171, 171, 175, 0.82);
 }
 .industry_card.active,
@@ -307,9 +308,23 @@ nav{
     text-transform: uppercase;
     cursor: pointer;
     padding-right: 10px;
+    position: relative;
 }
-.stage_btn:hover{
+.stage_btn:after{
+    content: "";
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     background: rgba(128, 128, 128, 0.25);
+    z-index: -1;
+    transition: width .3s ease;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.stage_btn:hover:after{
+    width: 100%;
 }
 .stage_btn div{
     width: 66px;
@@ -615,6 +630,9 @@ p.technology_text{
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+.contact_block:hover{
+    box-shadow: -6px 6px 5.5px rgba(171, 171, 175, 0.82);
 }
 .contact_block div{
     color: var(--accent-color);

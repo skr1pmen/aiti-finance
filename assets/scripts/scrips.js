@@ -90,6 +90,10 @@ userFile.addEventListener("change", (event) => {
         userFile.value = '';
         return false;
     }
+    document.querySelector('.file_title').textContent = userFile.files[0].name;
+    if (document.querySelectorAll(".file_desc").length !== 0) {
+        document.querySelector(".file_desc").remove();
+    }
     return true;
 });
 
