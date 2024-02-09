@@ -81,6 +81,7 @@ buildingItem.forEach((item) => {
         if (order.length === 4) {
             document.querySelector(".title_final").classList.add("active");
         }
+
     });
 });
 
@@ -124,3 +125,42 @@ function particles(path) {
         console.debug('callback - particles.js config loaded');
     });
 }
+
+
+/** Form submission */
+const feedbackForm = document.getElementById("feedback-form");
+
+const loaderElem = document.querySelector(".loader");
+
+feedbackForm.onsubmit = async (e) => {
+    loaderElem.classList.add("active");
+    feedbackForm.disabled = true;
+
+    try {
+        e.preventDefault();
+        order.forEach((choice, i) => {
+            order[i] = choice
+                .toLowerCase()
+                .replace("\n", " ");
+        });
+        let data = new FormData(feedbackForm);
+        data.append("user_choice_type", order[0]);
+        data.append("user_choice_platform", order[1]);
+        data.append("user_choice_work_stage", order[2]);
+        data.append("user_choice_start_work", order[3]);
+
+        let response = await fetch('/feedback', {
+            method: 'POST',
+            body: new FormData(feedbackForm)
+        });
+
+        let result = await response.json();
+
+        alert(result?.data?.message || result.message || result.error_text);
+    } catch (e) {
+        alert("Не удалось отправить Вашу заявку. Пожалуйста, свяжитесь с нами по телефону или по почте");
+    } finally {
+        loaderElem.classList.remove("active");
+        feedbackForm.disabled = false;
+    }
+};

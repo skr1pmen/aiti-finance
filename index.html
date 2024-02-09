@@ -597,7 +597,7 @@
                     <svg class="important" xmlns="http://www.w3.org/2000/svg" width="52" height="78" viewBox="0 0 58 84" stroke="black" fill="none">
                         <path d="M29 68H29.0433M11.6667 81H46.3333C48.6319 81 50.8363 80.0869 52.4616 78.4616C54.0869 76.8363 55 74.6319 55 72.3333V11.6667C55 9.36812 54.0869 7.16372 52.4616 5.53841C50.8363 3.91309 48.6319 3 46.3333 3H11.6667C9.36812 3 7.16372 3.91309 5.53841 5.53841C3.91309 7.16372 3 9.36812 3 11.6667V72.3333C3 74.6319 3.91309 76.8363 5.53841 78.4616C7.16372 80.0869 9.36812 81 11.6667 81Z" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <span class="building_name">обслуживание<br>клиентов</span>
+                    <span class="building_name">мобильное приложение</span>
                 </div>
             </div>
             <div class="building_items">
@@ -667,35 +667,6 @@
                     </label>
                     <button>начать проект</button>
                 </form>
-                <script>
-                    const feedbackForm = document.getElementById("feedback-form");
-
-                    const loaderElem = document.querySelector(".loader");
-
-                    feedbackForm.onsubmit = async (e) => {
-                        loaderElem.classList.add("active");
-                        feedbackForm.disabled = true;
-
-                        try {
-                            e.preventDefault();
-                            console.log(feedbackForm, new FormData(feedbackForm))
-
-                            let response = await fetch('/feedback', {
-                                method: 'POST',
-                                body: new FormData(feedbackForm)
-                            });
-
-                            let result = await response.json();
-
-                            alert(result?.data?.message || result.message || result.error_text);
-                        } catch (e) {
-                            alert("Не удалось отправить Вашу заявку. Пожалуйста, свяжитесь с нами по телефону или по почте");
-                        } finally {
-                            loaderElem.classList.remove("active");
-                            feedbackForm.disabled = false;
-                        }
-                    };
-                </script>
             </div>
         </div>
     </div>
