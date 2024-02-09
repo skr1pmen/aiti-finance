@@ -93,9 +93,7 @@ userFile.addEventListener("change", (event) => {
         return false;
     }
     document.querySelector('.file_title').textContent = userFile.files[0].name;
-    if (document.querySelectorAll(".file_desc").length !== 0) {
-        document.querySelector(".file_desc").remove();
-    }
+    document.querySelector(".file_desc").textContent = `${userFile.files[0].size/1024/1024}`.slice(0,4) + " мб";
     return true;
 });
 
