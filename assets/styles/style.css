@@ -1,6 +1,7 @@
 @import "./fonts.css";
 @import "./vars.css";
 @import "./preloader.css";
+@import "./animation.css";
 *{
     padding: 0;
     margin: 0;
@@ -135,6 +136,8 @@ ul .btn a:after{
     text-transform: uppercase;
     color: var(--accent-color);
     position: relative;
+    opacity: 0;
+    transform: translateY(100%);
 }
 .main_title:after{
     content: "";
@@ -145,6 +148,18 @@ ul .btn a:after{
     width: 143px;
     height: 16px;
     background: var(--accent-color);
+}
+.btn.active,
+.service_item.active,
+.title.active,
+.industry_cards.active,
+.industry_info_title.active,
+.industry_info_list.active li,
+.stage_btn.active,
+.technology_text.active,
+.contact_block.active,
+.main_title.active {
+    animation: fade .4s ease-in-out forwards;
 }
 .main_description{
     font-size: 30px;
@@ -162,6 +177,9 @@ ul .btn a:after{
     font-size: 60px;
     color: var(--accent-color);
     padding-top: 90px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(100%);
 }
 .services_items{
     display: flex;
@@ -180,6 +198,9 @@ ul .btn a:after{
     align-items: start;
     gap: 10px;
     cursor: pointer;
+    position: relative;
+    opacity: 0;
+    transform: translateY(100%);
 }
 .service_name{
     font-size: 25px;
@@ -203,6 +224,10 @@ ul .btn a:after{
     display: block;
     width: max-content;
     margin: 124px auto 0;
+    position: relative;
+    opacity: 0;
+    transform: translateY(100%);
+    animation-delay: .6s;
 }
 /*Industry Block*/
 .industry_block{
@@ -223,6 +248,10 @@ ul .btn a:after{
     grid-column-gap: 36.4px;
     grid-row-gap: 32.15px;
     height: max-content;
+
+    position: relative;
+    opacity: 0;
+    transform: translateY(100%);
 }
 .industry_card{
     width: 170px;
@@ -259,6 +288,10 @@ ul .btn a:after{
     color: var(--accent-color);
     margin-bottom: 18px;
     width: min-content;
+
+    position: relative;
+    opacity: 0;
+    transform: translateX(100%);
 }
 
 .industry_card_info_block.active,
@@ -276,6 +309,9 @@ ul .btn a:after{
     max-width: inherit;
     margin-left: 30px;
     position: relative;
+
+    opacity: 0;
+    transform: translateX(20%);
 }
 .industry_info_list li:not(:last-child){
     margin-bottom: 9px;
@@ -308,6 +344,9 @@ ul .btn a:after{
     cursor: pointer;
     padding-right: 10px;
     position: relative;
+
+    opacity: 0;
+    transform: translateY(100%);
 }
 .stage_btn:after{
     content: "";
@@ -363,6 +402,10 @@ ul .btn a:after{
     border: 3px solid var(--item-background);
     transition: border .1s linear;
     cursor: pointer;
+
+    position: relative;
+    opacity: 0;
+    transform: translateX(-50%);
 }
 .technology_text:hover{
     border: 3px solid var(--accent-color);
@@ -572,6 +615,10 @@ ul .btn a:after{
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    position: relative;
+    opacity: 0;
+    transform: translateX(-100%);
 }
 .contact_block div{
     color: var(--accent-color);
@@ -1283,5 +1330,11 @@ ul .btn a:after{
     }
     .contact_block {
         gap: 4px;
+    }
+}
+@keyframes fade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
